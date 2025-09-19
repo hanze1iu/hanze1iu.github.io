@@ -332,6 +332,9 @@
                 <div class="project-card">
                     <h3>Dual Harvesting Radiative Cooling Device</h3>
                     <div class="project-placeholder">
+                        <a href="https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(24)00112-7" target="_blank" style="color: #667eea; text-decoration: none;">
+                            Simultaneous subambient daytime radiative cooling and photovoltaic power generation from the same area
+                        </a>
                         [Sustainable Energy Research]
                     </div>
                     <p><strong>Problem:</strong> Buildings need energy-efficient cooling solutions that don't consume additional power</p>
@@ -434,7 +437,7 @@
             <p>Download my professional one-page resume for a comprehensive overview of my qualifications and experience.</p>
             <a href="#" class="resume-download">📄 Download Resume (PDF)</a>
             <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                [You'll need to upload your resume PDF and update this link]
+                
             </p>
         </section>
     </main>
@@ -475,6 +478,22 @@
                 header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
             }
         });
+        });
+
+        // Handle resume download
+        document.querySelector('.resume-download').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Try to download your resume file
+            const link = document.createElement('a');
+            link.href = './Liu HZ. resume.pdf';
+            link.download = 'Hanze_Liu_Resume.pdf';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
     </script>
 </body>
 </html>
+
