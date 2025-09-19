@@ -208,45 +208,22 @@
             }
         }
 
-        /* Photo upload styling */
-        .photo-upload {
+        /* Photo container styling */
+        .profile-photo-container {
             position: relative;
             display: inline-block;
-        }
-
-        .upload-btn {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .upload-btn:hover {
-            background: #2980b9;
-        }
-
-        #photo-input {
-            display: none;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="photo-upload">
-            <div class="profile-placeholder" id="profile-display">
-                Click to add your photo<br>
-                <small>(Upload an image)</small>
+        <div class="profile-photo-container">
+            <img src="./profile-photo.jpg" alt="Hanze Liu" class="profile-photo" id="profile-photo" 
+                 onerror="this.style.display='none'; document.getElementById('profile-placeholder').style.display='flex';">
+            <div class="profile-placeholder" id="profile-placeholder" style="display: none;">
+                Add your photo as<br>
+                <small>"profile-photo.jpg" in GitHub</small>
             </div>
-            <button class="upload-btn" onclick="document.getElementById('photo-input').click()">📷</button>
-            <input type="file" id="photo-input" accept="image/*">
         </div>
         
         <h1>Hanze Liu</h1>
@@ -265,14 +242,12 @@
     <div class="section">
         <h2>About</h2>
         <p>
-            I'm a Mechanical Engineering graduate student at Carnegie Mellon University with a 4.0 GPA, building on a strong 
-            foundation from Penn State University where I graduated with a 3.65 GPA and made Dean's List for 6 semesters. 
-            My research focuses on mobile manipulators, computer vision, and sustainable energy solutions.
+            I’m a Mechanical Engineering graduate student at Carnegie Mellon University with a 4.0 GPA, building on a strong academic foundation from Penn State University.
+            My current research focuses on mobile manipulators and computer vision, where I work on integrating real-time feedback into robotic planning and control. 
+            I’m especially interested in closing the gap between theoretical algorithms and practical robotic systems—making machines not only smarter on paper but also more reliable in the real world.
         </p>
         <p>
-            I'm passionate about developing innovative technologies that solve real-world problems, from precision robotics 
-            control systems to energy-efficient cooling devices. Through my research and industry experience at companies like 
-            Bojay Technologies, I've developed expertise in both theoretical research and practical engineering applications.
+            I enjoy tackling problems that sit at the intersection of mechanics, perception, and control, and I like to think of myself as an engineer who can translate math-heavy concepts into systems that actually do something useful (and hopefully don’t catch fire in the process).
         </p>
     </div>
 
@@ -367,26 +342,14 @@
     <div class="misc">
         <h3>Personal Interests</h3>
         <p>
-            Outside of engineering, I enjoy exploring new technologies, hiking, photography, and traveling. 
-            I'm always interested in discussing innovative solutions to real-world challenges and collaborating 
-            on projects that can make a positive impact.
+            Outside of research, I spend a good amount of time in the gym (lifting keeps both stress and gravity under control). When I’m not engineering robots, I’m usually strategizing in League of Legends or exploring single-player adventures—though FPS games consistently remind me that I can’t hear footsteps or spot enemies fast enough.
+        </p>
+        <p>
+            I also enjoy basketball and hiking, with past trails including Vernal and Nevada Falls via the Mist Trail and Mount Fremont Lookout Trail. Visiting U.S. national parks has become a growing passion—Yellowstone, Yosemite, Everglades, and the Great Smoky Mountains are already checked off the list, and I’m looking forward to adding many more.
         </p>
     </div>
 
     <script>
-        // Handle photo upload
-        document.getElementById('photo-input').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const profileDisplay = document.getElementById('profile-display');
-                    profileDisplay.innerHTML = `<img src="${e.target.result}" alt="Profile Photo" class="profile-photo">`;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-
         // Handle resume download
         document.getElementById('resume-btn').addEventListener('click', function(e) {
             e.preventDefault();
@@ -414,4 +377,3 @@
     </script>
 </body>
 </html>
-
