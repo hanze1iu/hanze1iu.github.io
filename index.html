@@ -3,486 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Engineering Portfolio</title>
+    <title>Hanze Liu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.8rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .nav-links a:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        main {
-            margin-top: 160px;
-            padding: 2rem 0;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 3rem 0;
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            padding: 40px 20px;
             color: #333;
+            background: #fff;
         }
 
-        .hero p {
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 40px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: block;
+            object-fit: cover;
+            border: 3px solid #f0f0f0;
+        }
+
+        .profile-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border: 3px solid #f0f0f0;
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+        }
+
+        .subtitle {
             font-size: 1.2rem;
             color: #666;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            margin-bottom: 25px;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #3498db;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s;
+            font-size: 15px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
+        .contact-links a:hover {
+            text-decoration: underline;
         }
 
         .section {
-            background: white;
-            margin-bottom: 3rem;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
         }
 
         .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
-            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .section p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: #555;
         }
 
-        .project-card {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s;
+        .project {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #fafbfc;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
+        .project h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
         }
 
-        .project-card h3 {
-            color: #333;
-            margin-bottom: 1rem;
+        .project-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background-color 0.3s;
         }
 
-        .project-card p {
+        .project-link:hover {
+            background: #2980b9;
+        }
+
+        .project-meta {
+            font-size: 14px;
             color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .project-placeholder {
-            background: #e9ecef;
-            padding: 3rem;
-            text-align: center;
-            color: #6c757d;
-            border-radius: 10px;
-            margin-bottom: 1rem;
+            margin-bottom: 12px;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        .skill-category {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
+        .skill-group h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #2c3e50;
         }
 
-        .skill-category h3 {
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .skill-list {
+        .skill-group ul {
             list-style: none;
-            color: #666;
+            padding: 0;
         }
 
-        .skill-list li {
-            padding: 0.25rem 0;
-        }
-
-        .resume-section {
-            text-align: center;
+        .skill-group li {
+            padding: 4px 0;
+            color: #555;
+            font-size: 15px;
         }
 
         .resume-download {
             display: inline-block;
-            background: #28a745;
+            padding: 12px 24px;
+            background: #27ae60;
             color: white;
-            padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 1rem;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-top: 20px;
             transition: background-color 0.3s;
         }
 
         .resume-download:hover {
-            background: #218838;
+            background: #229954;
         }
 
-        footer {
-            background: #333;
-            color: white;
+        .misc {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
             text-align: center;
-            padding: 2rem 0;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
+        .misc h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
         }
 
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            color: #667eea;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
             }
             
-            .logo {
-                font-size: 1rem;
-                max-width: 150px;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            nav {
-                padding: 0 10px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero {
-                padding: 2rem 1rem;
-            }
-            
-            .section {
-                padding: 2rem 1rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .contact-links {
+                flex-direction: column;
+                gap: 15px;
             }
             
             .skills-grid {
                 grid-template-columns: 1fr;
             }
             
-            .contact-info {
-                flex-direction: column;
-                gap: 1rem;
+            .profile-photo, .profile-placeholder {
+                width: 150px;
+                height: 150px;
             }
-            
-            .container {
-                padding: 0 15px;
-            }
+        }
+
+        /* Photo upload styling */
+        .photo-upload {
+            position: relative;
+            display: inline-block;
+        }
+
+        .upload-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .upload-btn:hover {
+            background: #2980b9;
+        }
+
+        #photo-input {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Hanze Liu</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section class="hero">
-            <h1>Hanze Liu</h1>
-            <p>Mechanical Engineering graduate student at Carnegie Mellon University, passionate about robotics, vision systems, and sustainable energy solutions</p>
-            <a href="#projects" class="cta-button">View My Work</a>
-        </section>
-
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p style="font-size: 1.1rem; color: #666; text-align: center; max-width: 800px; margin: 0 auto;">
-                I'm a Mechanical Engineering graduate student at Carnegie Mellon University with a 4.0 GPA, building on a strong 
-                foundation from Penn State University where I graduated with a 3.65 GPA and made Dean's List for 6 semesters. 
-                My research focuses on mobile manipulators, computer vision, and sustainable energy solutions. I'm passionate about 
-                developing innovative technologies that solve real-world problems, from precision robotics control systems to 
-                energy-efficient cooling devices. Through my research and industry experience at companies like Bojay Technologies, 
-                I've developed expertise in both theoretical research and practical engineering applications.
-            </p>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Projects & Experiences</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Vision-Based Mobile Manipulator Control</h3>
-                    <div class="project-placeholder">
-                        <a href="https://www.youtube.com/watch?v=m4op-4PaC8M" target="_blank" style="color: #667eea; text-decoration: none;">
-                            🎥 Watch Demo Video
-                        </a>
-                    </div>
-                    <p><strong>Problem:</strong> Mobile manipulators need real-time visual feedback for precise control in dynamic environments</p>
-                    <p><strong>Solution:</strong> Developed and integrated a computer vision-based feedback module using Python and point cloud processing</p>
-                    <p><strong>Results:</strong> Achieved exceptional precision with mean deviation of 0.75 mm and RMS error of 0.92 mm across 72,934 sampled points</p>
-                    <p><strong>My Role:</strong> Lead researcher - designed CV sensor pipeline, implemented real-time processing algorithms, conducted performance validation</p>
-                    <p><strong>Skills Used:</strong> Python, Computer Vision, Point Cloud Processing, ROS, Real-time Systems</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Dual Harvesting Radiative Cooling Device</h3>
-                    <div class="project-placeholder">
-                        <a href="https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(24)00112-7" target="_blank" style="color: #667eea; text-decoration: none;">
-                            Simultaneous subambient daytime radiative cooling and photovoltaic power generation from the same area
-                        </a>
-                        [Sustainable Energy Research]
-                    </div>
-                    <p><strong>Problem:</strong> Buildings need energy-efficient cooling solutions that don't consume additional power</p>
-                    <p><strong>Solution:</strong> Co-developed a dual-function device combining radiative cooling with solar energy generation</p>
-                    <p><strong>Results:</strong> Achieved sub-ambient cooling up to 4.9°C and >8.8 W/m² solar output; ~55 W/m² net cooling at night. Published in Cell Reports Physical Science (2024)</p>
-                    <p><strong>My Role:</strong> Research assistant - built optical/thermal components, conducted performance validation, co-authored publication</p>
-                    <p><strong>Skills Used:</strong> MATLAB, Thermal Analysis, Optical Design, IR Imaging, Technical Writing</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>RF Test Fixture Cost Optimization</h3>
-                    <div class="project-placeholder">
-                        [Industrial Engineering Project]
-                    </div>
-                    <p><strong>Problem:</strong> Custom RF test fixtures for major tech clients were exceeding budget constraints</p>
-                    <p><strong>Solution:</strong> Evaluated RF-compatible materials and redesigned fixtures with equivalent performance at lower cost</p>
-                    <p><strong>Results:</strong> Reduced material costs by over 66% while maintaining RF performance standards for clients including Meta, Apple, Tesla, and NVIDIA</p>
-                    <p><strong>My Role:</strong> Lead design engineer - conducted material analysis, coordinated with ME/EE teams, managed client communications</p>
-                    <p><strong>Skills Used:</strong> CAD Design, RF Engineering, Cost Analysis, Cross-functional Collaboration</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Colored Radiative Cooling Paint</h3>
-                    <div class="project-placeholder">
-                        [Materials Research Project]
-                    </div>
-                    <p><strong>Problem:</strong> Traditional radiative cooling materials are limited to white/silver colors, limiting architectural applications</p>
-                    <p><strong>Solution:</strong> Developed colored paint formulations with controlled polymer pore sizes for thermal performance</p>
-                    <p><strong>Results:</strong> Successfully created paint samples with measurable cooling efficiency while maintaining aesthetic color options</p>
-                    <p><strong>My Role:</strong> Independent researcher - proposed project concept, fabricated samples, conducted spectrophotometer analysis</p>
-                    <p><strong>Skills Used:</strong> Materials Science, UV-Vis-NIR Spectrophotometry, MATLAB Data Analysis, Wet Lab Techniques</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>A2B Audio System Integration</h3>
-                    <div class="project-placeholder">
-                        [Audio Engineering Project]
-                    </div>
-                    <p><strong>Problem:</strong> Complex A2B audio systems required efficient testing and troubleshooting solutions</p>
-                    <p><strong>Solution:</strong> Designed and verified product-level compatibility testing procedures for audio test stations</p>
-                    <p><strong>Results:</strong> Improved production testing efficiency and reduced system integration issues</p>
-                    <p><strong>My Role:</strong> Test engineer - developed compatibility verification procedures, troubleshot system connections</p>
-                    <p><strong>Skills Used:</strong> Audio Engineering, System Integration, Test Design, Troubleshooting</p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Automation Fixture Design</h3>
-                    <div class="project-placeholder">
-                        [Manufacturing Engineering]
-                    </div>
-                    <p><strong>Problem:</strong> Clients needed custom automation fixtures for various testing and manufacturing processes</p>
-                    <p><strong>Solution:</strong> Led early-stage fixture design across RF, acoustic, and automation domains with focus on manufacturability</p>
-                    <p><strong>Results:</strong> Delivered functional designs meeting client specifications while considering cost-performance trade-offs</p>
-                    <p><strong>My Role:</strong> Design lead - managed concept development, coordinated CAD finalization, ensured functional alignment</p>
-                    <p><strong>Skills Used:</strong> SolidWorks, Manufacturing Design, Ergonomics, Cost Engineering</p>
-                </div>
+    <div class="header">
+        <div class="photo-upload">
+            <div class="profile-placeholder" id="profile-display">
+                Click to add your photo<br>
+                <small>(Upload an image)</small>
             </div>
-        </section>
-
-        <section id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming & Analysis</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>MATLAB</li>
-                        <li>C++</li>
-                        <li>FEA (Finite Element Analysis)</li>
-                        <li>CFD (Computational Fluid Dynamics)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Software & Simulation</h3>
-                    <ul class="skill-list">
-                        <li>SolidWorks</li>
-                        <li>ROS (Robot Operating System)</li>
-                        <li>Gazebo</li>
-                        <li>Mujoco</li>
-                        <li>Webot</li>
-                        <li>Fritzing</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Engineering Specializations</h3>
-                    <ul class="skill-list">
-                        <li>Computer Vision</li>
-                        <li>Robotics & Mobile Manipulators</li>
-                        <li>Thermal Engineering</li>
-                        <li>RF Engineering</li>
-                        <li>3D Printing & Prototyping</li>
-                        <li>Materials Science</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="resume" class="section resume-section">
-            <h2>Resume</h2>
-            <p>Download my professional one-page resume for a comprehensive overview of my qualifications and experience.</p>
-            <a href="#" class="resume-download">📄 Download Resume (PDF)</a>
-            <p style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
-                
-            </p>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <div class="container">
-            <h3>Get In Touch</h3>
-            <div class="contact-info">
-                <a href="mailto:hanze200106@gmail.com">📧 hanze200106@gmail.com</a>
-                <a href="https://www.linkedin.com/in/hanze-liu-5b680425b" target="_blank">💼 LinkedIn</a>
-                <a href="tel:+12679022463">📱 (267) 902-2463</a>
-            </div>
-            <p>&copy; 2025 Hanze Liu. All rights reserved.</p>
+            <button class="upload-btn" onclick="document.getElementById('photo-input').click()">📷</button>
+            <input type="file" id="photo-input" accept="image/*">
         </div>
-    </footer>
+        
+        <h1>Hanze Liu</h1>
+        <div class="subtitle">
+            MS Mechanical Engineering, Carnegie Mellon University<br>
+            Robotics • Computer Vision • Sustainable Energy
+        </div>
+        
+        <div class="contact-links">
+            <a href="mailto:hanze200106@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/hanze-liu-5b680425b/" target="_blank">LinkedIn</a>
+            <a href="tel:+12679022463">Phone</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>About</h2>
+        <p>
+            I'm a Mechanical Engineering graduate student at Carnegie Mellon University with a 4.0 GPA, building on a strong 
+            foundation from Penn State University where I graduated with a 3.65 GPA and made Dean's List for 6 semesters. 
+            My research focuses on mobile manipulators, computer vision, and sustainable energy solutions.
+        </p>
+        <p>
+            I'm passionate about developing innovative technologies that solve real-world problems, from precision robotics 
+            control systems to energy-efficient cooling devices. Through my research and industry experience at companies like 
+            Bojay Technologies, I've developed expertise in both theoretical research and practical engineering applications.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Research and Projects</h2>
+        
+        <div class="project">
+            <h3>Vision-Based Mobile Manipulator Control</h3>
+            <div class="project-meta">Carnegie Mellon University • 2024-Present</div>
+            <a href="https://www.youtube.com/watch?v=m4op-4PaC8M" target="_blank" class="project-link">Watch Demo</a>
+            <p>
+                Developed and integrated a real-time computer vision-based feedback module for mobile manipulators, 
+                achieving exceptional precision with mean deviation of 0.75 mm and RMS error of 0.92 mm across 72,934 
+                sampled points. The system enables manipulators to adapt dynamically in complex environments through 
+                advanced point cloud processing and real-time control algorithms.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Dual Harvesting Radiative Cooling Device</h3>
+            <div class="project-meta">Penn State University • 2022-2024 • Published in Cell Reports Physical Science</div>
+            <a href="https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(24)00112-7" target="_blank" class="project-link">Read Paper</a>
+            <p>
+                Co-developed a dual-function device combining radiative cooling with solar energy generation, achieving 
+                sub-ambient cooling up to 4.9°C and >8.8 W/m² solar output. Built and aligned optical/thermal components 
+                for optimal performance, validated through comprehensive testing showing ~55 W/m² net cooling at night.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>RF Test Fixture Cost Optimization</h3>
+            <div class="project-meta">Bojay Technologies • 2025</div>
+            <p>
+                Led cost optimization efforts for custom RF test fixtures serving major tech clients including Meta, Apple, 
+                Tesla, and NVIDIA. Evaluated RF-compatible materials and redesigned fixtures, achieving over 66% reduction 
+                in material costs while maintaining performance standards. Managed cross-functional collaboration between 
+                ME/EE teams and client communications.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Colored Radiative Cooling Paint</h3>
+            <div class="project-meta">Penn State REU Program • 2023</div>
+            <p>
+                Proposed and developed colored paint formulations with controlled polymer pore sizes for thermal performance. 
+                Fabricated paint samples in wet lab environment and conducted comprehensive analysis using UV-Vis-NIR 
+                spectrophotometry. Successfully created paint samples with measurable cooling efficiency while maintaining 
+                aesthetic color options for architectural applications.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h4>Programming & Analysis</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>MATLAB</li>
+                    <li>C++</li>
+                    <li>FEA/CFD</li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <h4>Software & Simulation</h4>
+                <ul>
+                    <li>SolidWorks</li>
+                    <li>ROS</li>
+                    <li>Gazebo</li>
+                    <li>Mujoco</li>
+                </ul>
+            </div>
+            <div class="skill-group">
+                <h4>Specializations</h4>
+                <ul>
+                    <li>Computer Vision</li>
+                    <li>Robotics</li>
+                    <li>Thermal Engineering</li>
+                    <li>RF Engineering</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Resume</h2>
+        <p>Download my complete resume for detailed information about my qualifications and experience.</p>
+        <a href="#" class="resume-download" id="resume-btn">Download Resume (PDF)</a>
+    </div>
+
+    <div class="misc">
+        <h3>Personal Interests</h3>
+        <p>
+            Outside of engineering, I enjoy exploring new technologies, hiking, photography, and traveling. 
+            I'm always interested in discussing innovative solutions to real-world challenges and collaborating 
+            on projects that can make a positive impact.
+        </p>
+    </div>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        // Handle photo upload
+        document.getElementById('photo-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const profileDisplay = document.getElementById('profile-display');
+                    profileDisplay.innerHTML = `<img src="${e.target.result}" alt="Profile Photo" class="profile-photo">`;
+                };
+                reader.readAsDataURL(file);
             }
         });
 
         // Handle resume download
-        document.querySelector('.resume-download').addEventListener('click', function(e) {
+        document.getElementById('resume-btn').addEventListener('click', function(e) {
             e.preventDefault();
-            // Try to download your resume file
             const link = document.createElement('a');
             link.href = './Liu HZ. resume.pdf';
             link.download = 'Hanze_Liu_Resume.pdf';
@@ -491,8 +398,20 @@
             link.click();
             document.body.removeChild(link);
         });
+
+        // Smooth scrolling for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
 
